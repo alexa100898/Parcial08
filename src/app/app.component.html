@@ -12,13 +12,19 @@
   <th>Distancia Sol</th>
   <th>Cantidad lunas</th>
   <th>Masa</th>
+  <th>Anillos</th>
+
   </thead>
   <tbody>
-  <tr *ngFor="let plan of planetas">
+  <tr *ngFor="let plan of planetas" [ngSwitch]="plan.anillos">
   <td>{{plan.nombre}}</td>
   <td>{{plan.distancia}}</td>
   <td>{{plan.lunas}}</td>
   <td>{{plan.masa}}</td>
+ 
+    <span *ngSwitchCase=1>Si Rocoso</span>
+    <span *ngSwitchCase=2>No Rocoso</span>
+   
   </tr>
   </tbody>
   </table>
